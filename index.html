@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Snakes and Ladders game</title>
+<title>Serpientes y Escaleras - Hadrajá Hacoaj</title>
 <meta property="og:locale" content="en_US" /><meta property="og:type" content="HTML5 Game" /><meta property="og:title" content="Snakes and Ladders Game" /><meta property="og:description" content="This is Snakes and Ladders jump game made in HTML5." /><meta property="og:url" content="http://digitopper.com/" /><meta property="og:site_name" content="Snakes and Ladders jump Game" /><meta property="author" content="DigiTopper" />
         
 <meta name="viewport" content="width=800, user-scalable=yes, initial-scale=1, maximum-scale=1" />
@@ -32,12 +32,12 @@
     	<div id="screen1">
         	<header>
             	<div class="snakes-1"></div>
-    			<div id="logo"><h1>Snakes <span>and</span> Ladders</h1></div>
+    			<div id="logo"><h1>Serpientes <span>y</span> Escaleras</h1></div>
             </header>
             <div class="clear"></div>
             <footer>
                 <div class="screen1_footer">
-                        <div id="start" onclick="nextscreen('screen1', 'screen2');" class="startBtn"><span>Start</span> </div>
+                        <div id="start" onclick="nextscreen('screen1', 'screen2');" class="startBtn"><span>¡Vamos!</span> </div>
                         <div class="bottom-grass">
                             <div class="grass-1"></div>
                             <div class="grass-2"></div>
@@ -49,12 +49,12 @@
       <div id="screen2" style="display:none">
       		<div class="screen2-ladder"></div>
     		<div id="instructions">
-                <h2>Instructions</h2>
+                <h2>Instrucciones</h2>
                 <div class="inst_text">
                     <ul>
-                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
-                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+                        <li>Tirá el dado y si caes en un casillero especial respondé las preguntas para avanzar</li>
+                        <li>Aprendé</li>
+                        <li>Divertite</li>
                     </ul>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 	<div class="snakes-2"></div>
             <footer>
                 <div class="screen2_footer">
-                        <div id="play" class="startBtn" onclick="nextscreen('screen2', 'screen3');"><span>Play</span> </div>
+                        <div id="play" class="startBtn" onclick="nextscreen('screen2', 'screen3');"><span>¡A jugar!</span> </div>
                         <div class="bottom-grass">
                             <div class="grass-1"></div>
                             <div class="grass-2"></div>
@@ -75,27 +75,23 @@
         
         <div id="screen3" style="display:none">
         	<div class="Level-Theme">
-                <h3>Choose the Appropriate Level</h3>
+                <h3>Elegí el Nivel</h3>
             	<ul id="selectLevel">
-                	<li>Level 1</li>
-                	<li>Level 2</li>
-                	<li>Level 3</li>
-                	<li>Level 4</li>
-                	<li>Level 5</li>
-                </ul>
+                	<li>Nivel 1</li>
+                  <li>Nivel 2</li>
+                  <li>Nivel 3</li>
+                	</ul>
             </div>
         	
         </div><!-- \screen3 -->
         
         <div id="screen4" style="display:none">
         	<div class="Level-Theme">
-                <h3>Choose your Theme for the game</h3>
+                <h3>Elegí el Nivel de Dificultad</h3>
             	<ul id="selectTheme">
-                	<li>Animals</li>
-                	<li>Plants </li>
-                	<li>Water</li>
-                	<li>Safety</li>
-                	<li> Food</li>
+                	<li>Fácil</li>
+                	<li>Difícil </li>
+                	<li>Imposible</li>
                 </ul>
             </div>
         	
@@ -103,14 +99,14 @@
         
         <div id="screen5" style="display:none">
         	<div id="dice">
-            	<div class="surface" id="rolldicebtn"><span>ROLL</span></div>
+            	<div class="surface" id="rolldicebtn"><span>Tirá el dado</span></div>
                 <div class="dice" id="reddice"></div>
             </div>
         	<div id="table_grid">
             	<table class="table">
                   <tbody>
                     <tr class="">
-                      <td>Stop</td>
+                      <td>Final</td>
                       <td>99</td>
                       <td>98</td>
                       <td>97</td>
@@ -273,7 +269,7 @@
             	
             </div>
             </div><!-- \grid -->
-            <div id="replay" onclick="playagain()">Replay</div>
+            <div id="replay" onclick="playagain()">Volver a Jugar</div>
             
             
             <div id="questionViewer">
@@ -309,8 +305,8 @@
     </div>
     
     <div class="overlay">
-    	<div class="alertMsg errorMsg"><p>Please select an answer.</p></div>
-    	<div class="alertMsg sixDigitMsg"><p>You have thrown a six on the dice. Please roll again.</p></div>
+    	<div class="alertMsg errorMsg"><p>Por favor seleccioná una respuesta.</p></div>
+    	<div class="alertMsg sixDigitMsg"><p>Tiraste un seis en el dado, tiras nuevamente.</p></div>
     </div>
     
     </div><!-- \container -->

@@ -1,9 +1,8 @@
 /*
-* All Rights Reserved
+* MIT License 
 * Author: Ashok Kumar Shah
 * https://shahnashok.com
 */
-
 
 if(window.location.hash)
 {
