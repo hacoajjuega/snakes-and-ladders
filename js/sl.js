@@ -4,6 +4,15 @@
 * https://shahnashok.com
 */
 
+const rulesElems = [
+	'<li> Movimiento <br />	El jugador tira un dado virtual  y luego se mueven automáticamente según el número designado, entre uno y seis casillas.</li>',
+	'<li>Las Serpientes/Rampas <br /> Si el jugador cae en la parte superior de una serpiente, se debe responder la pregunta que aparecerá. ',
+	'<li>Las Serpientes/Rampas <br /> En caso de responder de forma incorrecta el jugador desciende por la serpiente, lo que lo lleva a una casilla menor en el tablero de forma automática</li>',
+	'<li>Las Escaleras <br /> Si el jugador cae en la parte inferior de una escalera, se debe responder la pregunta que aparecerá. </li>',
+	'<li>Las Escaleras <br /> En caso de responder de forma correcta el jugador sube la escalera, lo que lo lleva a una casilla mayor en el tablero de forma automática</li>',
+	'<li> Ganar <span style="visibility:hidden">22</span><br /> El ganador es el jugador que llega a la última casilla primero, ya sea por el aterrizaje desde un rollo, o por llegar a ella con una escalera</li>'
+]
+
 if(window.location.hash)
 {
 	var hash = window.location.hash.substring(1);
@@ -51,7 +60,7 @@ shah.setpos = function(curpos) {
 	var pY = ((53.5 * parseInt(cellProp.parentNode.rowIndex)));
 	
 	$('#player').animate({top: pY + 'px', left: pX + 'px'});
-	
+
 	//document.getElementsByClassName('dice')[0].className = "dice";
 	if(curpos == "Stop")
 	{
@@ -186,10 +195,24 @@ var rolldice = function()
 		shah.lastrolled = randomNum;
 		var tempholder;
 		
-		if(shah.currentpos == 0)		tempholder = "Start";
-		else if(shah.currentpos >= 100)	tempholder = "Stop";
-		else 							tempholder = shah.currentpos;
+		if(shah.currentpos == 0){
+			tempholder = "Start";
+		}		
+		else if(shah.currentpos >= 100){
+			tempholder = "Stop";
+			
+			$('.overlay, .winMsg').show();
+		setTimeout (function(){
+			$('.overlay, .winMsg').hide();
+		}, 3500);
+		//alert("Please select an answer.");
+		return false;
+		}	
+		else{
+			tempholder = shah.currentpos;
 
+		} 							
+		
 		
 		shah.setpos(tempholder);	
 		
@@ -199,7 +222,7 @@ var rolldice = function()
 
 var levelHTML = "";
 for(var i=0; i<slLevels.length; i++)
-	levelHTML += '<li onclick="selectlevel(\'' + (i+1) + '\')">Level ' + slLevels[i] + '</li>';
+	levelHTML += '<li onclick="selectlevel(\'' + (i+1) + '\')">Nivel ' + slLevels[i] + '</li>';
 document.getElementById('selectLevel').innerHTML = levelHTML;
 
 
@@ -330,13 +353,27 @@ for (var i = 0; i < preload.length; i++) {
         img.src = url;
     })(preload[i], promises[i] = $.Deferred());
 }
+var instructionIndex = - 1
+function changeInstruction (){
+	if(instructionIndex < 0 || instructionIndex >= rulesElems.length -1){
+		instructionIndex = 0;
+	} else{
+		instructionIndex += 1;
+	}
+
+	document.getElementById('rulesInside').innerHTML = rulesElems[instructionIndex]
+}
 
 $(document).ready(function() {
 
 	$.when.apply($, promises).done(function() {
 		$('body').addClass('done');
 	});
+	changeInstruction();
 
 
 
 });
+function replay(){
+	location.reload()
+}

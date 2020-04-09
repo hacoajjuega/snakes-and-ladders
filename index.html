@@ -6,6 +6,7 @@
 <meta property="og:locale" content="en_US" /><meta property="og:type" content="HTML5 Game" /><meta property="og:title" content="Snakes and Ladders Game" /><meta property="og:description" content="This is Snakes and Ladders jump game made in HTML5." /><meta property="og:url" content="http://digitopper.com/" /><meta property="og:site_name" content="Snakes and Ladders jump Game" /><meta property="author" content="DigiTopper" />
         
 <meta name="viewport" content="width=800, user-scalable=yes, initial-scale=1, maximum-scale=1" />
+<script src="https://kit.fontawesome.com/fd1d6a0ca3.js" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" type="text/css" href="css/sl.css" />
 </head>
@@ -27,8 +28,13 @@
 	
 	<span id="loganswer">Debug message appeares here</span>
 </div>
+<nav class="navbar">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Nautico_hacoaj_logo.png/225px-Nautico_hacoaj_logo.png" width="30" height="30"  alt="">
+    HADRAJÁ HACOAJ
+</nav>
 <div id="wrapper">
 	<div id="container">
+    
     	<div id="screen1">
         	<header>
             	<div class="snakes-1"></div>
@@ -37,7 +43,7 @@
             <div class="clear"></div>
             <footer>
                 <div class="screen1_footer">
-                        <div id="start" onclick="nextscreen('screen1', 'screen2');" class="startBtn"><span>¡Vamos!</span> </div>
+                        <div id="start" onclick="nextscreen('screen1', 'screen2');" class="startBtn"><span>¡VAMOS!</span> </div>
                         <div class="bottom-grass">
                             <div class="grass-1"></div>
                             <div class="grass-2"></div>
@@ -50,12 +56,13 @@
       		<div class="screen2-ladder"></div>
     		<div id="instructions">
                 <h2>Instrucciones</h2>
+                
                 <div class="inst_text">
-                    <ul>
-                        <li>Tirá el dado y si caes en un casillero especial respondé las preguntas para avanzar</li>
-                        <li>Aprendé</li>
-                        <li>Divertite</li>
+                  <div id = "moreRules" ><span onclick="changeInstruction()">VER MÁS</span></div>
+                    <ul id = "rulesInside">
+                          
                     </ul>
+                    
                 </div>
             </div>
             
@@ -63,7 +70,7 @@
                 	<div class="snakes-2"></div>
             <footer>
                 <div class="screen2_footer">
-                        <div id="play" class="startBtn" onclick="nextscreen('screen2', 'screen3');"><span>¡A jugar!</span> </div>
+                        <div id="play" class="startBtn" onclick="nextscreen('screen2', 'screen3');"><span>¡A JUGAR!</span> </div>
                         <div class="bottom-grass">
                             <div class="grass-1"></div>
                             <div class="grass-2"></div>
@@ -99,7 +106,7 @@
         
         <div id="screen5" style="display:none">
         	<div id="dice">
-            	<div class="surface" id="rolldicebtn"><span>Tirá el dado</span></div>
+            	<div class="surface" id="rolldicebtn"><span>Tirá</span></div>
                 <div class="dice" id="reddice"></div>
             </div>
         	<div id="table_grid">
@@ -266,7 +273,7 @@
                 </div>
 				
 				<div id="player"></div>
-            	
+        <div id ="player1"></div>   	
             </div>
             </div><!-- \grid -->
             <div id="replay" onclick="playagain()">Volver a Jugar</div>
@@ -284,7 +291,7 @@
                         <li onclick="setactiveans(this)">Answer 4</li>
                     </ul>
                 </div>
-                <div><button id="submitAns" onclick="submitAnswer()">Submit</button></div>
+                <div><button id="submitAns" onclick="submitAnswer()">Enviar</button></div>
          </div>
         	
         </div><!-- \screen5 -->
@@ -305,13 +312,19 @@
     </div>
     
     <div class="overlay">
-    	<div class="alertMsg errorMsg"><p>Por favor seleccioná una respuesta.</p></div>
+      <div class="alertMsg errorMsg"><p>Por favor seleccioná una respuesta.</p></div>
+      <div class="alertMsg winMsg" onclick="replay()"><p>¡Ganaste! Hace click acá para volver a jugar</p></div>
     	<div class="alertMsg sixDigitMsg"><p>Tiraste un seis en el dado, tiras nuevamente.</p></div>
     </div>
     
     </div><!-- \container -->
 </div><!-- \wrapper -->
-
+<nav class="navbar">
+  <div class="iconis">
+    <a href="https://www.facebook.com/HacoajFace/"><i class="fab fa-facebook"></i></a>
+  <a href="https://www.instagram.com/hadrajahacoaj/"><i class="fab fa-instagram"></i></a>
+</div>
+</nav>
 <div class="progress">
 	<div id="progress-wrapper">
 		<img src="img/index.fidget-spinner.svg" class="mauto" />
